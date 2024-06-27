@@ -14,10 +14,16 @@ This application allows users to search for dishes from a collection of restaura
 ![Screenshot from 2024-06-27 15-29-43](https://github.com/johurul000/food-map/assets/90057499/6b4004cc-5404-4d30-a356-c2cc3a4d04f2)
 
 
+
+
 ![Screenshot from 2024-06-27 15-30-08](https://github.com/johurul000/food-map/assets/90057499/3df521a8-9d00-4280-b9fc-9019689a2ecf)
 
 
+
+
 ![Screenshot from 2024-06-27 15-30-20](https://github.com/johurul000/food-map/assets/90057499/12cc57c8-5e54-4653-944f-ac30d026c929)
+
+
 
 
 ![Screenshot from 2024-06-27 15-47-56](https://github.com/johurul000/food-map/assets/90057499/511c5bb7-6b4d-4c4f-b202-26fe84bc1f8c)
