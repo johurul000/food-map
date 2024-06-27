@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'search_app/css/search.css' %}">
+    <title>Search Results</title>
+</head>
+<body>
+    <div class="main">
+        <div class="logo-div">
+            <img src="{% static 'search_app/images/2.png' %}" alt="logo">
+        </div>
+        <div class="form-div">
+            <form method="get" action="{% url 'search' %}">
+                <div class="input-div">
+                    <input type="text" id="search-box" name="query" placeholder="Search for a dish" autocomplete="off" required>
+                    <div class="suggestions" id="suggestions"></div>
+                </div>
+                <button type="submit">Search</button>
+                
+            </form>
+        </div>
+    </div>
+    <div class="result-section">
+        {% if best_matches %}
+            <h2>Search results for: <span>{{ dish_name }}</span></h2>
+            <div class="grid-container">
+                {% for match in best_matches %}
+                    <div class="card">
+                        {% if match.image %}
+                            <img src="{{ match.image.url }}" alt="{{ match.name }}">
+                        {% else %}
+                            <img class="default-image" src="{% static 'search_app/images/default_image.jpg' %}" alt="{{ match.name }}">
+                        {% endif %}
+                        <h3>{{ match.name }}</h3>
+                        <p>Price: ${{ match.price }}</p>
+                        <p>Restaurant: {{ match.restaurant.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No results found</p>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var searchSuggestionsUrl = '{% url "search_suggestions" %}'
+    </script>
+    <script defer src="{% static 'search_app/js/search.js'%}"></script>
+    
+</body>
+</html>
